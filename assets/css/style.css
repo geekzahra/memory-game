@@ -1,0 +1,387 @@
+@font-face {
+	font-family: 'VazirMatn';
+	font-style: bold;
+	font-weight: 800;
+	src: url('../fonts/Vazirmatn-Bold.woff2') format('woff2');
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: #fafafa;
+    font-family: 'VazirMatn';
+}
+
+/*-------------------------------HEADER-------------------------------*/
+
+header {
+    width: 640px;
+    margin: auto;
+}
+
+.page-title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.page-title h3 {
+    background-color: #9506e7;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/*-------------------------------END HEADER-------------------------------*/
+
+/*-------------------------------BUTTONS AND COUNTER, ABOVE AND UNDER GAME-------------------------------*/
+
+.game {
+    width: 640px;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.counter,
+.dropdown,
+.instructions,
+.reset {
+    text-align: center;
+}
+
+.instructions button,
+#play-again {
+    border: none;
+    padding: 0;
+}
+
+.dropdown-toggle,
+.counter p,
+.instructions button,
+#play-again {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    line-height: 40px;
+    background-color: #c4c4c4;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.instructions button:hover,
+#play-again:hover,
+.dropdown-toggle:hover {
+    text-decoration: none;
+    background-color: #6e049c; 
+    color: #fff;
+}
+
+.dropdown-menu li {
+    cursor: pointer;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background-color: #f1f1f1;
+}
+
+ul.dropdown-menu.show {
+    padding: 0;
+}
+
+.dropdown-menu li:hover {
+    background-color: #c4c4c4;
+    color: #fff;
+}
+
+i.fa.fa-check.option1, i.fa.fa-check.option2, i.fa.fa-times {
+    color: #79049c;
+}
+
+.hide-check {
+    display: none;
+}
+
+.reset {
+    padding: 10px 0 20px;
+}
+
+/*-------------------------------END BUTTONS AND COUNTER, ABOVE AND UNDER GAM-------------------------------*/
+
+/*-------------------------------MODALS-------------------------------*/
+
+.information-modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.win-modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.visible {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 600px;
+    background-color: #fafafa;
+    padding: 2rem 4rem;
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: #7b049c;
+}
+
+.modal-content p {
+    text-align: center;
+}
+
+.modal-close {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin: -1rem -2rem 0 0;
+}
+
+.modal-close span {
+    cursor: pointer;
+}
+
+.modal-hidden {
+    display: none;
+}
+
+/*-------------------------------END MODALS-------------------------------*/
+
+/*-------------------------------GAME-------------------------------*/
+
+.memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    background-color: #c4c4c4;
+    margin-top: 10px;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+}
+
+.memory-card {
+    width: 25%;
+    height: 25%;
+    position: relative;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+}
+
+.memory-card:active {
+    -webkit-transform: scale(0.97);
+        -ms-transform: scale(0.97);
+            transform: scale(0.97);
+    -webkit-transition: -webkit-transform .4s;
+    transition: -webkit-transform .4s;
+    -o-transition: transform .4s;
+    transition: transform .4s;
+    transition: transform .4s, -webkit-transform .4s;
+}
+
+.memory-card.flip {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.front {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+}
+
+.hide-card {
+    display: none;
+}
+
+.show-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/*-------------------------------END GAME-------------------------------*/
+
+/*-------------------------------MEDIA QUERIES-------------------------------*/
+
+@media screen and (max-width: 660px) {
+    .dropdown-toggle,
+    .counter p,
+    .instructions button {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 20px;
+    }
+}
+@media screen and (min-width: 390px) and (max-width: 660px) {
+    .memory-game {
+        width: 360px;
+        height: 360px;
+    }
+    header,
+    .game {
+        width: 360px;
+    }
+    img.back, img.front {
+        padding: 3px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 390px) {
+    .memory-game {
+        width: 320px;
+        height: 320px;
+    }
+    header,
+    .game {
+        width: 320px;
+    }
+    img.back, img.front {
+        padding: 3px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 320px) {
+    .memory-game {
+        width: 250px;
+        height: 250px;
+    }
+    img.back, img.front {
+        padding: 3px;
+    }
+    header,
+    .game {
+        width: 250px;
+    }
+    h3 {
+        font-size: 1.25rem;
+    }
+    .dropdown-toggle,
+    .counter p,
+    .instructions button{
+        font-size: 0.7rem;
+        width: 70px;
+    }
+    .modal-content h2 {
+    font-size: 1rem;    
+    }
+    .modal-content li {
+    font-size: 0.8rem;
+    }
+    .modal-content p {
+    font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-height: 1366px) and (min-width: 1024px) {
+    .memory-game {
+        width: 900px;
+        height: 900px;
+    }
+    header,
+    .game {
+        width: 900px;
+    }
+    .game {
+        padding: 10px 0 10px;
+    }
+    h3 {
+        font-size: 3rem;
+    }
+    .dropdown-toggle,
+    .counter p,
+    .instructions button{
+        font-size: 2rem;
+        width: 200px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 30px;
+    }
+}
+
+/*-------------------------------END MEDIA QUERIES-------------------------------*/

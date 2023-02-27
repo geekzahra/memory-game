@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Memory Game | Soorchi</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            type="text/css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" />
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    </head>
+    <body>
+        <!----------------------------------------HEADER---------------------------------------->
+        <header>
+            <div class="container page-title">
+                <div class="row">
+                    <div class="col">
+                        <h3>بازی حافظه</h3>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!----------------------------------------END HEADER---------------------------------------->
+        <section>
+            <!----------------------------------------INSTRUCTIONS MODAL---------------------------------------->
+            <div class="modal information-modal modal-hidden">
+                <div class="modal-content">
+                    <div class="modal-close">
+                        <span class="close-button"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    </div>
+                    <h2><i class="fa fa-cloud" aria-hidden="true"></i> راهنمایی</h2>
+                    <ul>
+                        <li>دو کارت را انتخاب کنید. اگر کارت‌ها یکسان باشند، ثبت می‌شوند در غیر این صورت مجددا کارت‌ها برمی‌گردند و شما می‌توانید دوباره تلاش کنید.</li> 
+                        <li>سعی کنید عکس پشت هر کارت و مکان آن کارت را به حافظه بسپارید.</li> 
+                        <li>زمانی که همه‌ی جفت کارت‌ها پیدا شوند شما برنده می‌شوید.</li> 
+                        <li>سعی کنید تا جای ممکن با تعداد کلیک کمتری برنده شوید تا امتیاز بیشتری کسب کنید.</li>
+                    </ul>
+                </div>
+            </div>
+            <!----------------------------------------END INSTRUCTIONS MODAL---------------------------------------->
+            <div class="game">
+                <!----------------------------------------BUTTONS AND COUNTER---------------------------------------->
+                <div class="instructions">
+                    <button id="show-modal">راهنمایی</button>
+                </div>
+                <div class="counter">
+                    <p>تعداد کلیک: <span>0</span></p>
+                </div>
+            </div>
+            <!----------------------------------------END BUTTONS AND COUNTER---------------------------------------->
+           <!----------------------------------------MEMORY CARDS---------------------------------------->
+            <div class="memory-game">
+                <div class="memory-card" id="first-cloud-image1" data-number="01">
+                    <img class="front" src="assets/images/01.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card" id="second-cloud-image1" data-number="01">
+                    <img class="front" src="assets/images/01.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card hide-card" id="cloud-name1" data-number="01">
+                    <img class="front" src="assets/images/01b.png" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card" id="first-cloud-image2" data-number="02">
+                    <img class="front" src="assets/images/02.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card" id="second-cloud-image2" data-number="02">
+                    <img class="front" src="assets/images/02.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card hide-card" id="cloud-name2" data-number="02">
+                    <img class="front" src="assets/images/02b.png" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">
+                </div>
+                <div class="memory-card" id="first-cloud-image3" data-number="03">
+                    <img class="front" src="assets/images/03.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card" id="second-cloud-image3" data-number="03">
+                    <img class="front" src="assets/images/03.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card hide-card" id="cloud-name3" data-number="03">
+                    <img class="front" src="assets/images/03b.png" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">
+                </div>
+                <div class="memory-card" id="first-cloud-image4" data-number="04">
+                    <img class="front" src="assets/images/04.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card" id="second-cloud-image4" data-number="04">
+                    <img class="front" src="assets/images/04.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card hide-card" id="cloud-name4" data-number="04">
+                    <img class="front" src="assets/images/04b.png" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">
+                </div>
+                <div class="memory-card" id="first-cloud-image5" data-number="05">
+                    <img class="front" src="assets/images/05.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card" id="second-cloud-image5" data-number="05">
+                    <img class="front" src="assets/images/05.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card hide-card" id="cloud-name5" data-number="05">
+                    <img class="front" src="assets/images/05b.png" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">
+                </div>
+                <div class="memory-card" id="first-cloud-image6" data-number="06">
+                    <img class="front" src="assets/images/06.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card" id="second-cloud-image6" data-number="06">
+                    <img class="front" src="assets/images/06.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card hide-card" id="cloud-name6" data-number="06">
+                    <img class="front" src="assets/images/06b.png" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">
+                </div>
+                <div class="memory-card" id="first-cloud-image7" data-number="07">
+                    <img class="front" src="assets/images/07.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card" id="second-cloud-image7" data-number="07">
+                    <img class="front" src="assets/images/07.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card hide-card" id="cloud-name7" data-number="07">
+                    <img class="front" src="assets/images/07b.png" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">
+                </div>
+                <div class="memory-card" id="first-cloud-image8" data-number="08">
+                    <img class="front" src="assets/images/08.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card" id="second-cloud-image8" data-number="08">
+                    <img class="front" src="assets/images/08.jpg" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">   
+                </div>
+                <div class="memory-card hide-card" id="cloud-name8" data-number="08">
+                    <img class="front" src="assets/images/08b.png" alt="cloud">
+                    <img class="back" src="assets/images/card-back.png" alt="back">
+                </div>
+            </div>
+            <!----------------------------------------END MEMORY CARDS---------------------------------------->
+            <!----------------------------------------WIN MODAL AND RESET BUTTON---------------------------------------->
+            <div class="modal win-modal">
+                <div class="modal-content">
+                    <div class="modal-close">
+                        <span id="win-modal-close-button"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    </div>
+                    <h2><i class="fa fa-cloud" aria-hidden="true"></i>برنده شدی!</h2>
+                    <p>تبریک میگم! توی <span id="final-count">0</span> کلیک برنده شدی :)</p>
+                </div>
+            </div>
+            <!----------------------------------------END WIN MODAL AND RESET BUTTON---------------------------------------->
+        </section>
+        <script src="assets/scripts/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
