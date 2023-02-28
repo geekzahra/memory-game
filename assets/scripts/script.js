@@ -154,8 +154,6 @@ function showNameCards() {
     document.querySelector('#cloud-name8').classList.add('show-card');
 }
 
-/*This is the event listener that checks if option2 is selected, and then runs the resetAndShowNameCards function*/
-document.querySelector('#option2').addEventListener("click", resetAndShowNameCards);
 
 /*There are two ways to play this game. Either with images only (option 1, the default setting), or with images and names (option 2).
 A user can select option 1. In that case, the game is reset, and after a short time-out the name cards are replaced by cloud images*/
@@ -222,6 +220,3 @@ function resetGame() {
 		shuffle();
 	}, 600);
 }
-
-/*When the button 'Play again' is clicked, the function resetGame runs*/
-document.querySelector('#play-again').addEventListener("click", resetGame);
